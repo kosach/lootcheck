@@ -1,0 +1,1 @@
+Loot Check - app for understanding tdd with redux
