@@ -21,7 +21,7 @@ describe('Wallet', () => {
     expect(wallet.find('.input-wallet').exists()).toBe(true);
   });
 
-  it('when the user types into the wallet input', () => { 
+  describe('when the user types into the wallet input', () => { 
     const userBalance = 25;
     beforeEach(() => { 
       wallet.find('.input-wallet')
@@ -39,12 +39,10 @@ describe('Wallet', () => {
       );
     });
     describe('and the user wants to make a withdrawal', () => { 
-      beforeEach(() => wallet.find('.btn-withdraw').simulate('clock'));
+      beforeEach(() => wallet.find('.btn-withdraw').simulate('click'));
       it('dispatches the `withdraw()` it receives from props with the local balance', () => {
         expect(mockWithdraw).toHaveBeenCalledWith(parseInt(userBalance, 10));
-      })
+      });
     });
-
   });
-
 });
